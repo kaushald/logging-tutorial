@@ -1,0 +1,19 @@
+{
+  "users": [
+    { "from": "hogsmeade", "to": "hogwarts" },
+    { "from": "kings-cross", "to": "st-mungos" },
+    { "from": "diagon-alley", "to": "grimmauld-place" },
+    { "from": "ministry-of-magic", "to": "azkaban" },
+    { "from": "leaky-cauldron", "to": "knockturn-alley" },
+    { "from": "godrics-hollow", "to": "little-whinging" },
+    { "from": "malfoy-manor", "to": "shell-cottage" },
+    { "from": "hogwarts", "to": "forbidden-forest" },
+    { "from": "quidditch-world-cup", "to": "weasleys-wizard-wheezes" },
+    { "from": "gringotts", "to": "ollivanders" },
+    { "from": "the-burrow", "to": "ottery-st-catchpole" },
+    { "from": "platform-9-3-4", "to": "hogsmeade-station" },
+    { "from": "honeydukes", "to": "shrieking-shack" },
+    { "from": "room-of-requirement", "to": "chamber-of-secrets" },
+    { "from": "whomping-willow", "to": "black-lake" }
+  ]
+}
