@@ -32,8 +32,9 @@ public class TransportationController {
         TransportationOption bestOption =
                 transportationService.getBestTransportationOption(startingPointName, destinationName);
 
-        logger.info("Travelling from {} to {}.  Suggested transportation option: {} - {}", startingPointName,
-                destinationName, bestOption.getName(), bestOption.getDescription());
+        logger.info("Source: {}", startingPointName);
+        logger.info("Destination: {}", destinationName);
+        logger.info("Best option: {}", bestOption.getName());
 
         logger.debug("Exiting getBestTransportationOption method");
 
