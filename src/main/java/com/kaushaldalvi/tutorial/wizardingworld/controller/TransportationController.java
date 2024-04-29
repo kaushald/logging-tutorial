@@ -26,16 +26,21 @@ public class TransportationController {
     @GetMapping
     public TransportationOption getBestTransportationOption(@RequestParam("startingPoint") String startingPointName,
                                                             @RequestParam("destination") String destinationName) {
-
-        logger.debug("Entering getBestTransportationOption method");
+        long startTime = System.currentTimeMillis();
 
         TransportationOption bestOption =
                 transportationService.getBestTransportationOption(startingPointName, destinationName);
 
-        logger.info("Travelling from {} to {}.  Suggested transportation option: {} - {}", startingPointName,
-                destinationName, bestOption.getName(), bestOption.getDescription());
+        long endTime = System.currentTimeMillis();
+        long duration = endTime - startTime;
 
-        logger.debug("Exiting getBestTransportationOption method");
+        // Unstructured Human-readable logging: Log entry as string
+        logger.info("Request completed: startingPoint={}, destination={}, optionName={}, optionDescription={}, processingTimeMs={}",
+                    startingPointName, destinationName, bestOption.getName(), bestOption.getDescription(), duration);
+
+        // Structured logging: Log entry as JSON object
+        logger.info("{\"event\":\"request_completed\", \"startingPoint\":\"{}\", \"destination\":\"{}\", \"optionName\":\"{}\", \"optionDescription\":\"{}\", \"processingTimeMs\":{}}",
+                    startingPointName, destinationName, bestOption.getName(), bestOption.getDescription(), duration);
 
         return bestOption;
     }
